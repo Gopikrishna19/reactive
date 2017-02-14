@@ -1,0 +1,23 @@
+{
+  "name": "reactive",
+  "version": "1.0.0",
+  "description": "reactive programming with rxjs",
+  "scripts": {
+    "build": "webpack -p",
+    "postinstall": "typings install",
+    "start": "webpack-dev-server"
+  },
+  "author": "Gopikrishna Sathyamurthy",
+  "license": "ISC",
+  "dependencies": {
+    "rxjs": "5.1.1"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "2.28.0",
+    "ts-loader": "2.0.0",
+    "typescript": "2.1.6",
+    "typings": "2.1.0",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0"
+  }
+}
