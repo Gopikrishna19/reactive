@@ -1,44 +1,31 @@
 import {Observable, Observer} from 'rxjs';
 
-(() => {
+const numbers = [1, 5, 25];
+const source = Observable.from(numbers);
 
-    console.log('... using simple functions ...');
+console.log('... using simple functions ...');
 
-    const numbers = [1, 5, 25];
+source.subscribe(
+    value => console.log(`value: ${value}`),
+    error => console.log(`error: ${error}`),
+    () => console.log('complete')
+);
 
-    const source = Observable.from(numbers);
+console.log('... using a class ...');
 
-    source.subscribe(
-        value => console.log(`value: ${value}`),
-        error => console.log(`error: ${error}`),
-        () => console.log('complete')
-    );
+class NumbersObserver implements Observer<number> {
 
-})();
-
-(() => {
-
-    console.log('... using a class ...');
-
-    class NumbersObserver implements Observer<number> {
-
-        next(value) {
-            console.log(`value: ${value}`);
-        }
-
-        error(error) {
-            console.log(`error: ${error}`);
-        }
-
-        complete() {
-            console.log('complete');
-        }
+    next(value) {
+        console.log(`value: ${value}`);
     }
 
-    const numbers = [1, 5, 25];
+    error(error) {
+        console.log(`error: ${error}`);
+    }
 
-    const source = Observable.from(numbers);
+    complete() {
+        console.log('complete');
+    }
+}
 
-    source.subscribe(new NumbersObserver());
-
-})();
+source.subscribe(new NumbersObserver());
