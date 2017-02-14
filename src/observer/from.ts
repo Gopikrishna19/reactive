@@ -1,5 +1,7 @@
 import {Observable, Observer} from 'rxjs';
 
+console.log('\n\n--- creating observable from a source ---\n\n');
+
 const numbers = [1, 5, 25];
 const source = Observable.from(numbers);
 
