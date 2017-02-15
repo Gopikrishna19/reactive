@@ -7,7 +7,8 @@ const source = Observable.fromEvent(document, 'mousemove')
         x: event.clientX,
         y: event.clientY
     }))
-    .filter(event => event.x <= 500 && event.y <= 500);
+    .filter(event => event.x <= 500 && event.y <= 500)
+    .delay(300);
 
 const next = value => {
     circle.style.left = value.x;
