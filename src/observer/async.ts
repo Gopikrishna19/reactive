@@ -1,6 +1,6 @@
 import {Observable} from 'rxjs';
 
-console.log('\n\n--- running observable asynchrnously ---\n\n');
+console.log('\n\n--- running observable asynchronously ---\n\n');
 
 const source = Observable.create(observer => {
 
