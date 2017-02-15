@@ -1,8 +1,5 @@
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {subscribe} from './subcriber';
-import 'rxjs/add/observable/from';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
 
 console.log('\n\n--- operators ---\n\n');
 
