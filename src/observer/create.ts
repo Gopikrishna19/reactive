@@ -1,4 +1,4 @@
-import {Observable} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 import {subscribe} from './subcriber';
 
 console.log('\n\n--- creating custom observable ---\n\n');

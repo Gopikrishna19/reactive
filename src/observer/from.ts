@@ -1,4 +1,6 @@
-import {Observable, Observer} from 'rxjs';
+import {Observable} from 'rxjs/Observable';
+import {Observer} from 'rxjs/Observer';
+import 'rxjs/add/observable/from';
 
 console.log('\n\n--- creating observable from a source ---\n\n');
 
