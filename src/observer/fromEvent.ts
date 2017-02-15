@@ -1,12 +1,17 @@
 import {Observable} from 'rxjs';
 import {subscribe} from './subcriber';
 
-let circle = document.getElementById('circle');
-let source = Observable.fromEvent(circle, 'mousemove')
-    .map((event: MouseEvent) => [
-        event.clientX,
-        event.clientY
-    ])
-    .filter(event => event[0] <= 100 && event[1] <= 100);
+const circle = document.getElementById('circle');
+const source = Observable.fromEvent(document, 'mousemove')
+    .map((event: MouseEvent) => ({
+        x: event.clientX,
+        y: event.clientY
+    }))
+    .filter(event => event.x <= 500 && event.y <= 500);
 
-subscribe(source);
+const next = value => {
+    circle.style.left = value.x;
+    circle.style.top = value.y;
+};
+
+subscribe(source, next);
