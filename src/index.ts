@@ -3,3 +3,4 @@ import './observer/create';
 import './observer/operator';
 import './observer/async';
 import './observer/fromEvent';
+import './http/fromEvent';
