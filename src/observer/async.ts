@@ -1,4 +1,5 @@
 import {Observable} from 'rxjs';
+import {subscribe} from './subcriber';
 
 console.log('\n\n--- running observable asynchronously ---\n\n');
 
@@ -20,8 +21,4 @@ const source = Observable.create(observer => {
     getNumber();
 });
 
-source.subscribe(
-    value => console.log(`value: ${value}`),
-    error => console.log(`error: ${error}`),
-    () => console.log('complete')
-);
+subscribe(source);

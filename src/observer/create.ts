@@ -1,4 +1,5 @@
 import {Observable} from 'rxjs';
+import {subscribe} from './subcriber';
 
 console.log('\n\n--- creating custom observable ---\n\n');
 
@@ -18,8 +19,4 @@ const source = Observable.create(observer => {
     observer.complete();
 });
 
-source.subscribe(
-    value => console.log(`value: ${value}`),
-    error => console.log(`error: ${error}`),
-    () => console.log('complete')
-);
+subscribe(source);
