@@ -1,6 +1,7 @@
-export const subscribe = source =>
-  source.subscribe(
-    value => console.log(`value: ${value}`),
-    error => console.log(`error: ${error}`),
-    () => console.log('complete')
-  );
+export const subscribe = (
+    source,
+    next = value => console.log(`value: ${value}`),
+    error = error => console.log(`error: ${error}`),
+    complete = () => console.log('complete')
+) =>
+    source.subscribe(next, error, complete);
