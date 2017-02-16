@@ -4,6 +4,11 @@ export const load = (url: string) =>
     Observable.defer(
         () => Observable.fromPromise(
             fetch(url)
-                .then(response => response.json())
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    }
+                    return Promise.reject(response);
+                })
         )
     );
